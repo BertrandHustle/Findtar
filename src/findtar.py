@@ -37,7 +37,7 @@ def select_from_array(array, selection):
         if '-' in i:
             hyphen_split = i.split('-')
             # subtract by 1 to account for 0-indexing
-            for j in range(int(hyphen_split[0])-1, int(hyphen_split[1])-1):
+            for j in range(int(hyphen_split[0]), int(hyphen_split[1])+1):
                 try:
                     return_string += array[int(j)]
                     return_string += " "
@@ -54,7 +54,7 @@ def select_from_array(array, selection):
                 int(i)
                 # if index is out of range do nothing
                 try:
-                    return_string += array[int(i)-1]
+                    return_string += array[int(i)]
                     return_string += " "
 
                 except IndexError:

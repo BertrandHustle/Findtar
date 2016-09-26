@@ -2,7 +2,9 @@ import unittest
 import findtar
 
 test_array = ['/var/spool/cron', '/var/log/cron', '/opt/google/talkplugin/cron']
+test_array2 = ['B', 'X', 'Y', 'G', 'W', 'E', 'M', 'A', 'K', 'P']
 test_selection = '1,3-4'
+test_selection2 = '1,5,6-10'
 
 
 class FindTarTests(unittest.TestCase):
@@ -14,10 +16,10 @@ class FindTarTests(unittest.TestCase):
     def test_select_from_array(self):
 
         # arrange
-        expected_result = '/var/spool/cron /opt/google/talkplugin/cron '
+        expected_result = 'B W E M A K P '
 
         # act
-        test_select = findtar.select_from_array(test_array, test_selection)
+        test_select = findtar.select_from_array(test_array2, test_selection2)
 
         # assert
         self.assertEqual(test_select, expected_result)

@@ -124,7 +124,7 @@ if __name__ == '__main__':
         archive_name = raw_input('Enter name of archive to be created\n')
 
         # tar command string
-        tar_comm = "tar cf" + comp_util + " "
+        tar_comm = "tar cf" + comp_util + " " + archive_name + " "
 
         # parse input for errors and add selection of files to tar command
         if selection.upper() == 'ALL':
